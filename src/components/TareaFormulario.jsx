@@ -19,10 +19,13 @@ export default function TareaFormulario(props) {
             texto: input,
             completada: false
         };
-
+        
+        props.onSubmit(tareaNueva);
+        
+        const inputDOM =document.getElementById('tarea-input');
+        inputDOM.value='';
         setInput('');
 
-        props.onSubmit(tareaNueva);
     };
 
     return (
@@ -30,6 +33,7 @@ export default function TareaFormulario(props) {
             className='tarea-formulario'
             onSubmit={manejarEnvio}>
             <input 
+                id="tarea-input"
                 className='tarea-input'
                 type='text'
                 placeholder='Escribe una Tarea...'
@@ -37,7 +41,7 @@ export default function TareaFormulario(props) {
                 onChange={manejarCambio}
             />
             <button 
-                className='tarea-boton'>
+                className='tarea-boton' > 
                 Agregar Tarea
             </button>
         </form>
