@@ -18,7 +18,9 @@ export default function TareaFormulario(props) {
             id: uuidv4(),
             texto: input,
             completada: false
-        }
+        };
+
+        setInput('');
 
         props.onSubmit(tareaNueva);
     };
